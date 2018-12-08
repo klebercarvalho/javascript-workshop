@@ -1,4 +1,4 @@
-const makeCreateUser = require('../../../..//app/user/createUser')
+const makeCreateUser = require('../../../../app/user/createUser')
 
 describe('createUser', () => {
   // vamos reasing
