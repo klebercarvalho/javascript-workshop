@@ -1,30 +1,31 @@
 class User {
-  constructor ({ name, age }) {
-    this.name = name
-    this.age = age
-  }
-
-  validate () {
-    const hasName = Boolean(this.name)
-    const hasMinAge = this.age >= User.MIN_AGE
-
-    const validation = {
-      isValid: hasName && hasMinAge
+    constructor({id,name,age}){
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
 
-    if (!hasName) {
-      validation.error = { name: 'Name is empty' }
-    }
+    validate() {
+        const hasName = Boolean(this.name)
+        const hasMinAge = this.age >= User.MIN_AGE
 
-    if (!hasMinAge) {
-      validation.error = validation.error || {}
-      validation.error.age = 'Age is not the mnimum'
-    }
+        const validation = {
+            isValid: hasName && hasMinAge
+        }
 
-    return validation
-  }
+        if (!hasName) {
+            validation.error = {name:'Name is empty'}
+        }
+
+        if (!hasMinAge) {
+            validation.error = validation.error || {};
+            validation.error.age = 'Age is not the mnimum'
+        }
+
+        return validation;
+    }
 }
 
-User.MIN_AGE = 18
+User.MIN_AGE = 18;
 
-module.exports = User
+module.exports = User;
